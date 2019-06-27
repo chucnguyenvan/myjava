@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <td><label for="">Amount </label></td>
+        <td><label for="">FROM </label></td>
+        <td><label for="">TO </label></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td> <input type="number" id= "amount" ></td>
+        <td><select id="currence">
+                <option value="usd">USD</option>
+                <option value="euro">EURO</option>
+                <option value="vnd">VND</option>
+            </select>
+        </td>
+        <td>
+            <select id="toCurrence">
+                <option value="usd">USD</option>
+                <option value="euro">EURO</option>
+                <option value="vnd">VND</option>
+            </select>
+        </td>
+        <td><button type="button" onclick="showChange();">CONVERT</button></td>
+    </tr>
+    </table>
+    <script>
+        function showChange(){
+            let amount=parseInt(document.getElementById("amount").value)
+            let a = document.getElementById("currence").value;
+            let b = document.getElementById("toCurrence").value;
+            if(a==b) {
+                let result= amount*1;
+                alert(result);
+            }
+            if(a=="usd" && b=="euro") {
+                let result= amount*1.1;
+                alert(result);
+            }
+            if(a=="usd" && b=="vnd") {
+                let result= amount*23000;
+                alert(result);
+            }
+            if(a=="euro" && b=="vnd") {
+                let result= amount*25000;
+                alert(result);
+            }
+            if(a=="euro" && b=="usd") {
+                let result= amount*1.1;
+                alert(result);
+            }
+            if(a=="vnd" && b=="euro") {
+                let result= amount/25000;
+                alert(result);
+            }
+            if(a=="vnd" && b=="usd") {
+                let result= amount/23000;
+                alert(result);
+            }
+        }
+    </script>
+</body>
+</html>
