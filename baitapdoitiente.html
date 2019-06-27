@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><label for="amount">Amount <br></label></td>
+            <td><label for="tiengoc">From Currency <br></label></td>
+            <td><label for="tiendoi"> To Currency <br></label></td>
+            
+        </tr>
+        <tr>
+            <td> <input type="number" name="amount" id="amount"></td>
+            <td>
+                <select id="currency">
+                    <option value="usd">USD</option>
+                    <option value="vnd">VND</option>
+                    <option value="Euro">EURO</option>
+                </select>
+               
+            </td>
+            
+            <td>
+                <select id="toCurrency">
+                    <option value="usd">USD</option>
+                    <option value="vnd">VND</option>
+                    <option value="Euro">EURO</option>
+                </select>
+            </td>
+            <td>
+                    <button type="button" onclick="doiTien();">Convert</button>             
+            </td>
+
+        </tr>
+    </table>
+    <script>
+        function doiTien(){
+            let amount=parseInt(document.getElementById("amount").value)
+            let currency= document.getElementById("currency").value;
+            let toCurrency = document.getElementById("toCurrency").value;
+            if(currency=="usd" && toCurrency=="vnd") {
+                let result= amount*23000;
+                alert(result);
+            }
+        }
+    </script>
+</body>
+
+</html>
