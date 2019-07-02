@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>TINH TIEN DIEN GIA DINH TRONG 1 THANG</h3>
+    <br><br>
+    <label for="">NHAP VAO SO CHU DIEN HANG BAN DA SU DUNG:</label>
+    <input type="number" id="numberElectric" placeholder="0">
+    <br><br>
+    <button type="button" onclick="showCalculator();">TIENDIEN :</button>
+    <br><br>
+    <label for="">SO TIEN BAN PHAI TRA:</label>
+    <input type="number"id="moneyBill" placeholder="0" value=0>
+    <script>
+        function showCalculator(){
+            let soChuDien= document.getElementById("numberElectric").value;
+            if (soChuDien<=50){
+                document.getElementById("moneyBill").value= soChuDien*1678.000;
+            }else if (soChuDien<=100) document.getElementById("moneyBill").value= 50*1678 + (soChuDien-50)*1734;
+                  else  if (soChuDien<=200) document.getElementById("moneyBill").value= 50*1678 + 50*1734 +(soChuDien-100)*2014;
+                        else document.getElementById("moneyBill").value= 50*1678 + 50*1734 +100*2014+ (soChuDien-200)*2536;
+        }
+    </script>
+
+</body>
+</html>

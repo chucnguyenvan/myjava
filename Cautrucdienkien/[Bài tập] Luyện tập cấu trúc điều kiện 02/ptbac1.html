@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>GIAI PT BAC 1 ax + b =0: </h3>
+    <br><br>
+    <label for=""> He so a cua x:</label>
+    <input type="number" name="" id="hesoa" placeholder="0"> 
+    <br><br>
+    <label for=""> He so b:</label>
+    <input type="number" name="" id="hesob" placeholder="0"> 
+    <br><br>
+    <button type="button" onclick="showGiai();">GIAI PT</button>
+    <script>
+            function showGiai(){
+                let a = document.getElementById("hesoa").value;
+                let b=  document.getElementById("hesob").value;
+                if (a==0){
+                    if (b!=0) alert("PT vo nghiem");
+                    else {
+                    alert("PT Vo so nghem");
+                    }
+                } else alert("PT co nghiem duy nhat " + -b/a)
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>KIEM TRA 3 CANH TAM GIAC :</h3>
+    <br><br>
+    <label for="">canh a:</label>
+    <input type="number" id="canha" placeholder="0" value=0>
+    <br><br>
+    <label for="">canh a:</label>
+    <input type="number" id="canhb" placeholder="0" value = 0>
+    <br><br>
+    <label for="">canh a:</label>
+    <input type="number" id="canhc" placeholder="0" value =0>
+    <br><br>
+    <button type="button" onclick="showCheck();">CHECK</button>
+    <br><br>
+    <script>
+        function showCheck() {
+            let a = document.getElementById("canha").value;
+            let b = document.getElementById("canhb").value;
+            let c = document.getElementById("canhc").value;
+            if ((a <= 0) || (b <= 0) || c <= 0) {
+                alert(a + " " + b + " " + c + " " + " Khong Phai la 1 canh Tam giac");
+            } else if ((a + b < c) || (a + c < b) || (b + c < a)) alert(+a + " " + b + " " + c + " " + " Khong Phai la 3 canh Tam giac");
+            else alert(+a + " " + b + " " + c + " " + " la 3 canh Tam giac");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Diem Kt mieng:</label>
+    <input type="number" id ="diemMieng" placeholder="0">
+    <br><br>
+    <label for="">Diem KT 15P :</label>
+    <input type="number" id ="diem15p" placeholder="0">
+    <br><br>
+    <label for="">Diem Kt 1 Tiet:</label>
+    <input type="number" id="diemTiet" placeholder="0">
+    <br><br>
+    <label for="">Diem Thi HOCKI:</label>
+    <input type="number" id="diemThi" placeholder="0"> 
+    <br><br>
+    <button type="button" onclick="showXepLoai();">XEP LOAI</button>
+    <br><br>
+    <label for="">DIEM TB MON:</label>
+    <input type="number" id = "diemTb" placeholder="0">
+    <script>
+        function showXepLoai(){
+            let diemMieng = parseInt(document.getElementById("diemMieng").value);
+            let diem15p = parseInt(document.getElementById("diem15p").value);
+            let diemTiet = parseInt(document.getElementById("diemTiet").value);
+            let diemThi =parseInt(document.getElementById("diemThi").value);
+            let diemTb=parseFloat((diem15p+diemMieng+diemTiet*2+diemThi*3)/7);
+            (document.getElementById("diemTb").value)=diemTb.toFixed(1);
+            if (diemTb>=8){
+                alert(" xep loai gioi");
+            } else if (diemTb>=6.5){
+                        alert(" xep loai Kha");
+                    } else if (diemTb>5){
+                            alert("xep loai Tb")
+                        } else alert("xep loai YEU");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <Label>NHAP VAO NAM SINH :</Label>
+    <input type="nuber" id ="yearNumber" placeholder="0">
+    <br><br>
+    <Label>Tuoi :</Label>
+    <input type="text" id ="age" placeholder="0">
+    <br><br>
+    <button type="button" onclick="showCheck()">KIEM TRA</button>
+    <script>
+            function showCheck(){
+                let age = 2019-parseInt(document.getElementById('yearNumber').value);
+                document.getElementById('age').value=age;  
+                if(age>=15){
+                    
+                alert (" DU DIEU KIEN NHAP HOC LOP 10");
+                } else {
+                    alert (" CHUA DU DIEU KIEN NHAP HOC LOP 10");
+                }
+               
+             }
+        </script>
+</body>
+</html>

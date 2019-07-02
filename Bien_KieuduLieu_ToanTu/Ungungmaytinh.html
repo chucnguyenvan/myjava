@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id ="numBer1">
+    <input type="number" id ="numBer2">
+    <br><br>
+    <button type="button" onclick="showAddtion();">+</button>
+    <button type="button" onclick="showSubtraction();">-</button>
+    <button type="button" onclick="showMutilplication();">X</button>
+    <button type="button" onclick="showDivision();">:</button>
+    <script>
+        function showAddtion(){
+            let a = parseInt(document.getElementById("numBer1").value);
+            let b = parseInt(document.getElementById("numBer2").value);
+            let kq=a+b;
+            alert(+kq);
+        } 
+        function showSubtraction(){
+            let a = parseInt(document.getElementById("numBer1").value);
+            let b = parseInt(document.getElementById("numBer2").value);
+            let kq=a-b;
+            alert(kq);
+        } 
+        function showMutilplication(){
+            let a = parseInt(document.getElementById("numBer1").value);
+            let b = parseInt(document.getElementById("numBer2").value);
+            let kq=a*b;
+            alert(+kq);
+        } 
+        function showDivision(){
+            let a = parseInt(document.getElementById("numBer1").value);
+            let b = parseInt(document.getElementById("numBer2").value);
+            if(b==0) alert("KHONG CHIA DUOC")
+            else {
+            let kq=a/b;
+            alert(+kq);
+            }
+        } 
+    </script>
+</body>
+</html>

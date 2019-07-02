@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label > <input type="number" id ="nuberOne" placeholder="0"> NHAP VAO SO T1 : </label>
+    <br><br>
+    <label > <input type="number" id ="nuberTwo" placeholder="0"> NHAP VAO SO T2 : </label>
+    <br><br>
+    <button type="button" onclick="showCheck()">KIEM TRA</button>
+    <script>
+        function showCheck(){
+            let a = parseInt(document.getElementById('nuberOne').value);
+            let b = parseInt(document.getElementById('nuberTwo').value);  
+            if(a%b===0){
+            alert(+a + " Chia het cho " +b);
+            } else {
+                    alert(+a + " Khong chia het cho " +b);
+            }
+         }
+    </script>
+    
+</body>
+</html>

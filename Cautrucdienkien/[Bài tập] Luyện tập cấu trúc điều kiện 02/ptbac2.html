@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>GIAI PT BAC 2 ax2+bx+c=0</h3>
+    <br><br>
+    <label for="">He so a:</label>
+    <input type="number" id="hesoa" placeholder="0">
+    <br><br>
+    <label for="">He so b:</label>
+    <input type="number" id="hesob" placeholder="0">
+    <br><br>
+    <label for="">He so c:</label>
+    <input type="number" id="hesoc" placeholder="0">
+    <br><br>
+    <button type="button" onclick="showGiaiPT()"> GIAI PT</button>
+    <br><br>
+    <script>
+        function showGiaiPT() {
+            let a = document.getElementById("hesoa").value;
+            let b = document.getElementById("hesob").value;
+            let c = document.getElementById("hesoc").value;
+
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0) alert("PT co vo so nghiem");
+                    else alert("PT vo nghiem");
+                } else alert("PT co 1nghiem duy nghiem x= " + (-c / b));
+            } else {
+                let delta = Math.pow(b,2) - 4 * a * c;
+                if (delta<0) alert(" PT vo nghiem");
+                if (delta==0) alert (" PT co nghiem kep x1= x2= " + -b/(2*c));
+                if (delta>0){
+                    let x1= (-b+Math.sqrt(delta)/(2*a));
+                    let x2 = (-b-Math.sqrt(delta)/(2*a));
+                    alert(" PT co 2 nghiem x1= " + x1+ " x2 = "+ x2);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

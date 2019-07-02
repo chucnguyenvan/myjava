@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <Label>NHAP VAO 1 SO :</Label>
+    <input type="nuber" id ="yourNumber" placeholder="0">
+    <br><br>
+    <button type="button" onclick="showCheck()">KIEM TRA</button>
+    <script>
+            function showCheck(){
+                let a = parseInt(document.getElementById('yourNumber').value);
+                if (a>0) {                   
+                alert (" LON HON O");
+                } else if(a<0){                   
+                alert (" NHO HON O");
+                    } else {
+                    alert (" BANG O");
+                         }
+               
+             }
+        </script>
+</body>
+</html>

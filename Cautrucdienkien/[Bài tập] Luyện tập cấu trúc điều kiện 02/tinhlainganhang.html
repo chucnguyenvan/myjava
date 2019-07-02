@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>TINH LAI NGAN HANG:</h3>
+    <br><br>
+    <label for="">TEN KHACH HANG: </label>
+    <input type="text" name="name" id="nameCustomer" placeholder="Nguyen Van A">
+    <br><br>
+    <label for=""> SO TIEN DA GUI : </label>
+    <label><input type="number"  id="sentNumber" placeholder="0" value="0">vnd</label>
+    <br><br>
+    <label for="">LAI SUAT 1 THANG: </label>
+    <label><input type ="number" id ="laiSuat" placeholder= "0"> %</label>
+    <br><br>
+    <label for="">SO THANG: </label>
+    <label><input type ="number" id ="numbermonth" placeholder= "0"> THÁNG </label>
+    <br><br>
+    <button type="button" onclick="showCalculator();">SHOW</button>
+    <br><br>
+    <label >TIEN BAN CO: </label>
+    <label for=""> <input type="number" id = "recieveMoney" placeholder="0"> vnd</label>
+    <br><br>
+    <label >TIEN LAI : </label>
+    <label for=""> <input type="number" id = "laiMoney" placeholder="0"> vnd</label>
+    <br><br>
+    <script>
+            function showCalculator(){
+                let tienGui= document.getElementById("sentNumber").value;
+                let laiSuat= parseFloat(document.getElementById('laiSuat').value)/100;
+                let soThang= document.getElementById('numbermonth').value;
+                document.getElementById('recieveMoney').value= tienGui*(Math.pow((1+laiSuat),soThang));
+                document.getElementById('laiMoney').value=tienGui*(Math.pow((1+laiSuat),soThang))-tienGui;
+            }
+    </script>
+</body>
+</html>

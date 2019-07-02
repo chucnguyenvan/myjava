@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="width: 150px">
+    <input type="text"  id="hienThi" placeholder="0">
+    <br>
+    <table>
+        <tr>
+            <td><input type="button" id="1" value =1 onclick="(document.getElementById('hienThi').value+='1');"></td>
+            <td><input type="button" id="2" value =2 onclick="document.getElementById('hienThi').value+='2';"> </td>
+            <td><input type="button" id="3" value =3 onclick="(document.getElementById('hienThi').value+='3');"></td>
+            <td><button type="button" id = "cong" onclick="(document.getElementById('hienThi').value+='+');">+</button></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" id="4" value =4 onclick="(document.getElementById('hienThi').value+='4');"></td>
+            <td> <input type="button" id="5" value =5 onclick="(document.getElementById('hienThi').value+='5');"></td> 
+            <td><input type="button" id="6" value =6 onclick="(document.getElementById('hienThi').value+='6');"></td>
+             <td><button type="button" id = "tru" onclick="(document.getElementById('hienThi').value+='-');">-</button></td>          
+        </tr>
+        <tr>
+                <td><input type="button" id="7" value =7 onclick="(document.getElementById('hienThi').value+='7');"></td>
+                <td> <input type="button" id="8" value =8 onclick="(document.getElementById('hienThi').value+='8');"></td> 
+                <td><input type="button" id="9" value =9 onclick="(document.getElementById('hienThi').value+='9');"></td>
+                 <td><button type="button" id = "nhan" onclick="(document.getElementById('hienThi').value+='*');">x</button></td>          
+        </tr>
+        <tr>
+                <td><button type="button" id = " delete" onclick="document.getElementById('hienThi').value=''">C</button></td>
+                <td> <input type="button" id="0" value =0 onclick="(document.getElementById('hienThi').value+='0');"></td> 
+                <td><button type="button" id="bang"  onclick="document.getElementById('hienThi').value=eval(document.getElementById('hienThi').value)">=</td>
+                 <td><button type="button" id = "chia" onclick="(document.getElementById('hienThi').value+='/');">:</button></td>          
+        </tr>
+    </table>
+</fieldset>
+</body>
+</html>
