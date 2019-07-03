@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h3>TINH 20 SO TRONGDAY FIBONACCI :</h3>
+        <br>
+        <script>
+            let a =0;
+            let b =1;
+            let sum= 0;
+            let fiboNacci=0;
+            for (let i = 1; i <= 20; i++) {
+                a=b;
+                b=fiboNacci;
+                fiboNacci=a+b;
+                sum += fiboNacci;
+           }
+           document.write("Tong cua 20 so dau tien trong day Fibonaccy: " +sum);
+        </script>
+</body>
+</html>

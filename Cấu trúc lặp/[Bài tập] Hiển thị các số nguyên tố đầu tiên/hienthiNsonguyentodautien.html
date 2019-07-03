@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>HIEN THI N SO NGUYEN TO DAU TIEN</h3>
+    <br><br>
+    <label for="">IN RA </label>
+    <label><input type="number" id ="nmberNguyenTo" placeholder="1"> NGUYEN TO DAU TIEN</label>
+    <button type="button" onclick="showSoNT();">HIENTHI</button>
+    <script>
+        function showSoNT(){
+        let N= 2;
+        let n=document.getElementById('nmberNguyenTo').value;
+        let count=0;
+        let hienThi="";
+        while(count<n){
+                let dem= 0;
+                for (let i = 2; i <= Math.round(Math.sqrt(N)); i++) {
+                    if(N%i==0){
+                        dem+=1;
+                    }
+                }
+                if(dem==0) {
+                        count+=1;
+                        hienThi+=N +" ";
+                        N+=1;
+                } else N+=1;
+                console.log(hienThi); 
+                
+        }
+        document.write(hienThi);
+       
+           
+        }
+        
+    </script>
+   
+</body>
+</html>

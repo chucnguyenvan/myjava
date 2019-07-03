@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>BANG CUU CHUONG</h3>
+    <br><br>
+    <script>
+        let sout ;
+        sout = "<table border='1' width='800' cellspacing='0' cellpadding='3'>"
+        let i=0;
+        let j=0;
+        for (i = 1; i < 11; i++) {
+            sout+= "<tr>";
+            for (j = 1; j < 11; j++) {
+               sout=sout + "<td>"+ i+ " * "+ j + '= ' +i*j+"</td>" ;          
+            }
+            sout+= "</tr>";
+        }
+        sout+= "</table>";
+        document.write(sout)
+    </script>
+</body>
+</html>
