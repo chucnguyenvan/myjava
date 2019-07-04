@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">TRO CHOI DOAN SO:</label>
+    <br><br>
+    <button type="button" onclick="check();">CHOI</button>
+    
+    <script>
+        function check(){
+            let keyNumber =Math.round(Math.random()*100);       
+            let yourChoise = parseInt(prompt("BAN DOAN SO NAO:"))
+            while(yourChoise != keyNumber){
+                if (yourChoise<keyNumber) {
+                    alert("LON HON");
+                }
+                else { 
+                    alert("NHO HON");
+                }
+                yourChoise=parseInt(prompt("MOI BAN DOAN LAI"));
+            }
+            alert("CHUC MUNG! BAN DA DOAN DUNG");
+        }
+ 
+    </script>
+</body>
+</html>

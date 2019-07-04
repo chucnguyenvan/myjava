@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>TINH LAI NGAN HANG SU DUNG FOR:</h3>
+    <br><br>
+    <table>
+        <tr>
+            <td><label for="">NHAP SO TIEN GUI :</label></td>
+            <td><input type="number" id ="numberSent" placeholder="0"></td>
+            <td><label for="">vnd</label></td>
+        </tr>
+        <tr>
+            <td><label >SO THANG GUI :</label></td>
+            <td><input type="number" id ="numberMonth" placeholder="0"></td>
+            <td><label for="">Thang</label></td>
+        </tr>
+        <tr>
+            <td><label >LAI SUAT GUI :</label></td>
+            <td><input type="number" id ="interestRate" placeholder="0"></td>
+            <td><label for="">%</label></td>
+        </tr>
+        <td><br></td>
+        <tr>      
+            <td><button type="button" onclick="showCal();"> TINHLAISUAT</button></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="">SO TIEN NHAN :</label></td>
+            <td><input type="text" id ="recieveMoney" placeholder="0"></td>
+            <td><label for="">vnd</label></td>
+        </tr>
+        <tr>
+            <td><label >TIEN LAI :</label></td>
+            <td><input type="text" id ="interestMoney" placeholder="0"></td>
+            <td><label for="">vnd</label></td>
+        </tr>
+    </table>
+    <script>
+        function showCal(){
+        let numberSent= document.getElementById('numberSent').value;
+        let numberMonth = document.getElementById('numberMonth').value;
+        let interestRate =document.getElementById('interestRate').value/100;
+        let recieveMoney = document.getElementById('recieveMoney').value;
+            let i=0;
+            recieveMoney=numberSent;
+            for (i=1;i<=numberMonth;i++){
+                recieveMoney =recieveMoney*(1+interestRate);
+            }
+            document.getElementById('recieveMoney').value= recieveMoney;
+            document.getElementById('interestMoney').value=recieveMoney-numberSent;
+        }
+        
+    </script>
+</body>
+</html>

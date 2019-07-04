@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>TINH GIAI THUA CUA 1 SO:</h3>
+    <br><br>
+    <Label>NHAP VAO 1 SO NGUYEN DƯƠNG: </Label>
+    <input type="number" id="numberYourChoise" placeholder="0">
+    <br>
+    <button type="button" onclick="calculator();">GIAI THUA </button>
+
+    <script>
+        function calculator(){
+            let factorial =1;
+            let i=0;
+            let n=document.getElementById("numberYourChoise").value;
+            for(i=1;i<=n;i++){
+                factorial*=i;
+            }
+            alert("GIAI THUA CUA " + n+ " la :" +factorial);
+        }
+
+    </script>
+</body>
+</html>
