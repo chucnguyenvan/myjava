@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let A = [];
+        let n = 4;
+        for (let i = 0; i < n; i++) {
+            A[i] = parseInt(prompt("Nhap vao Pt thu " + i))
+        }
+        let N = parseInt(prompt("nhap vao so ban can tim: "));
+        
+        function find(number) {
+            for (let i = 0; i < n; i++) {
+                if (A[i] == N) {
+                    return true;
+                    //break;
+                }
+            }  return false;
+        }
+        if (find(N)==true) {
+            document.write(N + " is in the array");
+        }
+        else document.write(N + " is not in the array");
+
+    </script>
+</body>
+
+</html>

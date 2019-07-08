@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let A=[];
+        let n=10;
+        for(let i=0;i<n;i++){
+            A[i]=parseInt(prompt("Nhap vao Pt thu " + i))
+        }
+        let max= A[0];
+        for(let i=0;i<n;i++){
+           if(A[i]>max) max=A[i]
+        }
+        document.writeln("Gia tri lon nhat la : "+max + "<br>");
+        for(let i=0;i<n;i++){
+           if(A[i]==max) {
+               document.writeln(+max +" nam o vi tri "+ i);
+           }
+        }
+    </script>
+</body>
+</html>

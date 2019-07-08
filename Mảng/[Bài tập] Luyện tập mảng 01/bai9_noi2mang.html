@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let A=[];
+        let B=[];
+        let C=[];
+        let i=0;
+        document.writeln("Mang A: ");
+        alert("NHAP VAO MANG A:");
+        for(i=0;i<10;i++){
+            A[i]=parseInt(prompt("Nhap vao gia tri " +i));
+            document.writeln(A[i]);
+        }
+        document.writeln("<br>");
+        alert("NHAP VAO MANG B:");
+        document.writeln("Mang B");
+        for(i=0;i<10;i++){
+            B[i]=parseInt(prompt("Nhap vao gia tri " +i));
+            document.writeln(B[i]);
+        }
+        document.writeln("<br>");
+        document.writeln("Mang C");
+        for(i=0;i<10;i++){
+            C[i]=A[i];
+            C[i+10]=B[i];
+        }
+        for (i=0;i<C.length;i++){
+            document.writeln(C[i]);
+        }
+    </script>
+</body>
+</html>

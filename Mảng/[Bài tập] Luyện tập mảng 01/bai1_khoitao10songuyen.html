@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let A=[];
+        let N=10;
+        let count =0;
+        for(let i=0;i<10;i++){
+            A[i]=parseInt(prompt("let your element " +i));           
+        }
+        for(let i=0;i<A.length;i++){
+            if(A[i]>=10){
+                document.writeln(A[i]);
+                count++;
+            }          
+        }
+        document.write("<br>");
+        document.write("Co " +count +" phan tu trong mang Lon hon hoac Bang 10")
+    </script>
+
+</body>
+</html>

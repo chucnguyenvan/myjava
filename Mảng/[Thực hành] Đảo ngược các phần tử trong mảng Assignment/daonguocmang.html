@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>DAO NGUOC MANG: </h3>
+    <br>
+    <input type="number" id="yourNumber" placeholder="0">
+    <button type="button" onclick="addition();">ADD</button>
+    <br><br>
+    <button type="button" onclick="reServe();">REVERSE</button>
+    <button type="button" onclick="disPlay();">DISPLAY</button>
+    <br>
+    <script>
+        let A=[];
+        function addition(){
+                let x = parseInt(document.getElementById("yourNumber").value);
+                A.push(x);
+                alert("BAN vua them " + x +" vao mang!");
+                document.getElementById("yourNumber").value = "";
+        }
+        function disPlay(){
+            for(i=0;i<A.length;i++){
+                    document.write(" Element " + i + " = " + A[i] + "<br/>");
+            }
+        }
+        function reServe(){
+            let lastIndex=A.length-1;
+            let i=0;
+            for(i=0; i<A.length/2; i++){
+                let t=A[i];
+                A[i]=A[lastIndex-i];
+                A[lastIndex-i]=t;
+            }
+        }
+    </script>
+
+</body>
+</html>
