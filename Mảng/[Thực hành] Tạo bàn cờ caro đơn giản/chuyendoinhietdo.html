@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Temperature Converter:</h3>
+    <br>
+    <label for=""> Type a value in the Fahrenheit file to converter the value to Celcious: </label>
+    <br>
+    <label for="">Fahrenheit</label> <input type="number" id="Temperature" placeholder="0">
+    <label for="">Celcious</label> <span id="cenciousTemperature"></span>
+    <script>
+        function temperature(do_F){
+            let C= (do_F-32)/9*5;
+            return C;
+        }
+        let doF= document.getElementById('Temperature').value;
+        let cencious=temperature(doF);
+        document.getElementById('cenciousTemperature').value=cencious;
+    </script>
+
+</body>
+</html>

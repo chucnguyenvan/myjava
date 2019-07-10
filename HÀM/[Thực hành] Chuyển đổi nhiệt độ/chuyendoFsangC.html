@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Temperature Converter:</h3>
+    <label for=""> Type a value in the Fahrenheit file to converter the value to Celcious: </label>
+    <br><br>
+    <label for="">Fahrenheit</label> 
+    <input type="number" id="Temperature" placeholder="0"
+    oninput="temperatureConverter(this.value)" 
+    onchange="temperatureConvert(this.value)">
+    <br>
+    <label for="">Celcious :</label> <span id ="cenciousTemperature"></span>
+    <br>
+    <br>
+
+    <script>
+        function temperatureConvert(doF) {
+            let C = (doF - 32) / 9 * 5;
+            document.getElementById("cenciousTemperature").innerHTML=C;
+        }
+    </script>
+</body>
+
+</html>

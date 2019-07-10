@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = parseInt(prompt("Nhap vao 1 so : "));
+        alert("Giai thua cua so " + a + " la : " + factorial(a));
+        // function factorial(number){
+        //     if(number<=1)return 1;
+        //     else return (number*factorial(number-1));
+        // }
+        function factorial(number) {
+            let gt =1;
+            if (number <= 1) gt= 1;
+            else for(i=2;i<=number;i++){
+                gt*=i;
+            }
+            return gt;
+        }
+
+    </script>
+</body>
+
+</html>

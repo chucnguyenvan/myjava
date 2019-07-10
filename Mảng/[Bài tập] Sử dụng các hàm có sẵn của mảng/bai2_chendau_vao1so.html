@@ -10,15 +10,20 @@
 
 <body>
     <script>
-        n = parseInt(prompt("NHAP VAO 1 So: "));
-        let i = 0;
-        let phanThapphan = 0;
-        let soDu = 0;
-        let A = [];
-        while (n < 10) {
-            if (n % 2 == 0) {
-                A[i] = n % 10;
+        let str = window.prompt("NHAP VAO 1 So: ");
+        let result =[str[0]];
+        for(let i=1;i<str.length;i++){
+            if((str[i-1]%2===0)&&(str[i]%2===0)){
+                result.push("-", str[i]);
             }
+            else {
+                result.push(str[i]);
+            }
+        }
+        // let t = result.join("");
+        // document.write(t);
+        for (let i=0;i<result.length;i++){
+            document.write(result[i]);
         }
 
     </script>

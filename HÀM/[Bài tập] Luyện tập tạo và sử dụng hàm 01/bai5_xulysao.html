@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nameStar= prompt("nhap vao ten ngoi sao : ");
+        findElement(nameStar);
+        function findElement(string){
+            let arr1=['Polaris','Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+            let arr2=['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila','Ursa Major','Leo'];
+            for(i=0;i<arr1.length;i++){
+                if(string==arr1[i]) return alert( "Ten cua chm sao : " +arr2[i]);
+            }
+            return alert("Khong tim thay ten ngoi sao nay");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nb1 =parseInt(prompt("Nhap vao 1 so : "));
+        let nb2 =parseInt(prompt("Nhap vao 1 so : "));
+        let nb3 =parseInt(prompt("Nhap vao 1 so : "));
+        alert('Gia tri nho nhat 3 so la: '+ minThree(nb1,nb2,nb3));
+        function minThree(a,b,c){
+            let min=a;
+            if(b<min) min=b;
+            if(c<min) min=c;
+            return min;
+        }
+    </script>
+</body>
+</html>

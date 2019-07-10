@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r = parseInt(prompt("Nhap vao ban kinh hinh tron: "));
+        alert("Dien tich hinh tron la: " +areaCircle(r));
+        alert("Chu vi hinh tron la: " +peripheralCircle(r));
+        function areaCircle(radian){
+            return (Math.PI*Math.pow(radian,2));
+        }
+        function peripheralCircle(radian){
+            return (2*Math.PI*radian);
+        }
+    </script>
+</body>
+</html>
