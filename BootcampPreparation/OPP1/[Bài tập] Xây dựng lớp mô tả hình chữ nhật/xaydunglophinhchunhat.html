@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+        <script>
+            let recTangle = function (length, width) {
+                this.length = length;
+                this.width = width;
+                this.getLength = function () {
+                    return this.length;
+                }
+                this.getWidth = function () {
+                    return this.width;
+                }
+                this.getAarea = function () {
+                    return (this.width * this.length);
+                }
+                this.getPeripheral = function () {
+                    return ((this.width + this.length) * 2);
+                }
+            }
+
+            function getRandomHex() {
+                return Math.floor(Math.random() * 255);
+            }
+            function getRandomColor() {
+                var red = getRandomHex();
+                var green = getRandomHex();
+                var blue = getRandomHex();
+                return "rgb(" + red + "," + blue + "," + green + ")";
+            }
+
+            function createCircle(length, width) {
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                // /let length = Math.floor(Math.random() * 500);
+                // let width = Math.floor(Math.random() * length);
+                var color = getRandomColor();
+                var x = Math.random() * window.innerWidth;
+                var y = Math.random() * window.innerHeight;
+                // var hcn = new recTangle(x, y, length,width);
+                ctx.beginPath();
+                ctx.fillStyle=color;
+                ctx.fillRect(x, y, length, width);
+                ctx.fill();
+            }
+            let dai =Math.floor(Math.random() * 500);
+            let rong=Math.floor(Math.random() * dai);
+            let hcn = new recTangle(dai,rong);
+            alert("DT HCN : "+hcn.getAarea()+ " chu vi HCN: "+hcn.getPeripheral());
+            createCircle(hcn.getLength(),hcn.getWidth());
+
+        </script>
+</body>
+
+</html>

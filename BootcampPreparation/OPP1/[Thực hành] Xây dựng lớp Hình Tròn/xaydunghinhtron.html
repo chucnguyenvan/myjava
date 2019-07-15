@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Circle= function (radius){
+            this.radius=radius;
+            // this.color=color;
+
+            this.getRadius= function(){
+                return this.radius;
+            } 
+            this.getArea =function () {
+                return (Math.PI * this.radius*this.radius);
+            }
+        }
+        let c=new Circle(2);
+        let r=c.getRadius();
+        alert(" Ban kinh hinh tron : "+ r);
+        let area = c.getArea();
+        alert(" Dien tich hinh tron la : "+ area);
+
+        let c1= new Circle(3);
+        let r1= c1.getRadius();
+        let area1=c1.getArea();
+        alert(" Ban kinh hinh tron : "+ r1);
+        alert(" Dien tich hinh tron la : "+ area1);
+
+    </script>
+</body>
+</html>

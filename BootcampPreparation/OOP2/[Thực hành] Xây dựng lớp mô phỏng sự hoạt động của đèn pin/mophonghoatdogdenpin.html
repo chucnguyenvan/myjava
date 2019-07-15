@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Battery = function (energy) {
+            this.energy = energy;
+            this.setEnergy = function (pin) {
+                this.energy = pin;
+            }
+            this.getEnergy = function () {
+                return this.energy;
+            }
+            this.decreaseEnergy = function () {
+                if (this.energy > 0) {
+                    this.energy--;
+                }
+            }
+        }
+        let flapLamp = function (battery) {
+            this.status = true;
+            this.battery = battery;
+            this.setBattery = function (battery) {
+                this.battery = battery;
+            }
+            this.getBatteryInfor = function () {
+                return this.battery.getEnergy();
+            }
+            this.light = function () {
+                if (this.status) {
+                    document.writeln("Lighting <br>");
+                } else {
+                    document.writeln("Not lighting <br>");
+                }
+            }
+            this.turnOn = function () {
+                if (!this.status) {
+                this.status = true;
+                this.battery.decreaseEnergy();
+                }
+            }
+            this.turnOff = function () {
+                if (this.status) {
+                this.status = false;
+                this.battery.decreaseEnergy();
+                }
+            }
+        }
+        let pin = new Battery(15);
+        var denpin = new flapLamp(pin);
+        denpin.setBattery(pin);
+        document.write("Battery info:" + denpin.getBatteryInfor() + "<br/>");
+        denpin.light();
+
+        document.write("Turn on<br/>")
+        denpin.turnOn();
+        document.write("Battery info:" + denpin.getBatteryInfor() + "<br/>");
+        denpin.light();
+
+        document.write("Turn off<br/>")
+        denpin.turnOff();
+        document.write("Battery info:" + denpin.getBatteryInfor() + "<br/>");
+        denpin.light();
+
+        document.write("Turn on<br/>")
+        denpin.turnOn();
+        document.write("Battery info:" + denpin.getBatteryInfor() + "<br/>");
+        denpin.light();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Remote = function(){
+            this.label=[0,1,2,3,4,5,6,7,8,9,"power","volumeIncrease","volumeDecrease"];
+            this.changeChanel= function (label,Tivi){
+                if(label==this.label[10]) return Tivi.status=!Tivi.status;
+                else for(let i=0;i<10;i++){
+                    if(label==this.label[i]) return Tivi.controlChanel(label);
+                }
+            }
+            this.changeVolume=function(label,Tivi){
+                if(label=="volumeIncrease"){
+                    return Tivi.controlVolume(true);
+                }
+                if(label=="volumeDecrease"){
+                    return Tivi.controlVolume(false);
+                }
+            }
+        }
+        let TIVI=function(){
+            this.chanel=1;
+            this.volume=10;
+            this.status=false;
+            this.turnOn=function(){
+                return this.status=true;
+            }
+            this.turnOff=function(){
+                return this.status=false;
+            }
+            this.controlChanel=function(kenh){
+                return this.chanel=kenh;
+            }
+            this.controlVolume=function(volume){
+                if(volume){
+                    return this.volume++
+                }
+                else{
+                    return this.volume--;
+                }
+            }
+        }
+       
+        let SONY= new TIVI();
+        let remote= new Remote();
+        remote.changeChanel("power",SONY);
+        document.write(SONY.status+"<br>")
+        SONY.controlChanel(7);
+        document.write(SONY.chanel+"<br>")
+        remote.changeChanel(3,SONY);
+        document.write(SONY.chanel+"<br>")
+        remote.changeVolume("volumeIncrease",SONY);
+        document.write(SONY.volume+"<br>")
+        remote.changeVolume("volumeIncrease",SONY);
+        document.write(SONY.volume+"<br>")
+        remote.changeChanel("power",SONY);
+        document.write(SONY.status+"<br>")
+    </script>
+</body>
+</html>

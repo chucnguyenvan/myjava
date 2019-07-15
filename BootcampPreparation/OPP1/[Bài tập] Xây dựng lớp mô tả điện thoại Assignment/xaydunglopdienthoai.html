@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let batteryMobile = function () {
+            this.pin = 100;
+            this.getStatus = function () {
+                return this.pin;
+            }
+        }
+        let moBile = function (battery) {
+            this.battery = battery;
+            this.saveBox = [];
+            this.inBox = [];
+            this.sentBox = [];
+            this.status = false;
+            this.checkStatus = function () {
+               if((this.status == true) && (battery.pin>0)) return true;
+               if((this.status == false)||(battery.pin==0)) return false
+            }
+            this.turnOn = function () {
+                this.battery.pin--;
+                return this.status = true;
+            }
+            this.turnOff = function () {
+                this.battery.pin--;
+                return this.status = false;
+            }
+            this.charge = function () {
+                this.battery.pin = 100;
+            }
+            this.writeMessage = function (massage) {
+                if (this.checkStatus()) {
+                    // this.saveBox.push(massage);
+                    this.battery.pin--;
+                    return massage;
+                }
+            }
+            this.receiveMessage = function (mobile) {
+                if (this.checkStatus()) {
+                    this.inBox.push(mobile.sentBox[mobile.sentBox.length - 1]);
+                    this.battery.pin--;
+                }
+            }
+            this.sentMessage = function (massage, mobile) {
+                if (this.checkStatus()) {
+                    if (massage !="") {
+                        if (mobile.status) {
+                            this.sentBox.push(massage);
+                            // mobile.inBox.push(massage);
+                        } else {
+                            // let day=0;
+                            // while ((!mobile.checkStatus) && (day<=3)) {
+                            //     day++;
+                            //     return this.sentMessage(massage, mobile);
+                            // } 
+                            alert("Tn ban khong gui duoc!")
+                            this.saveBox.push(massage);
+                        }
+                        this.battery.pin--;
+                    } else {
+                        alert("Tn ban gui khong co noi dung");
+                        this.battery.pin--;
+                    }
+                }
+            }
+            this.readMessageInbox = function () {
+                if (this.checkStatus()) {
+                    if (this.inBox == []) {
+                        document.write("Khong co tin nhan! <br>")
+                    } else {
+                        document.write("Hop Thu den: <br>")
+                        for (i = 0; i < this.inBox.length; i++) {
+                            document.write(this.inBox[i] + "<br>")
+                        }
+                    }
+                    this.battery.pin--;
+                }
+            }
+            this.readMessageSentBox = function () {
+                if (this.checkStatus()) {
+                    if (this.sentBox ==[]) {
+                        document.write("Khong co tin nhan! <br>")
+                    } else {
+                        document.write("Hop Thu da gui: <br>")
+                        for (i = 0; i < this.sentBox.length; i++) {
+                            document.write(this.sentBox[i] + " <br>")
+                        }
+                    }
+                    this.battery.pin--;
+                }
+            }
+        }
+
+        let pinNokia= new batteryMobile();
+        let Nokia = new moBile(pinNokia);
+        Nokia.turnOn();
+        console.log(Nokia.status)
+        console.log(pinNokia.getStatus())
+        let pinIphone= new batteryMobile();
+        let Iphone = new moBile(pinIphone);
+        // TH1 : I PHONE ON
+        if(!Iphone.checkStatus()){
+            Iphone.turnOn();
+        }
+        console.log(Iphone.status)
+        console.log(pinIphone.getStatus())
+        let massage= "alo! alo!";
+        Nokia.writeMessage(massage);
+        console.log(pinNokia.getStatus())
+        console.log(Nokia.saveBox)
+        Nokia.sentMessage(massage,Iphone);
+        console.log(pinNokia.getStatus())
+        console.log(Nokia.sentBox)
+        Iphone.receiveMessage(Nokia);
+        console.log(pinIphone.getStatus())
+        console.log(Iphone.inBox)
+        Nokia.readMessageSentBox();
+        console.log(pinNokia.getStatus())
+        Iphone.readMessageInbox();
+        console.log(pinIphone.getStatus())
+
+        // TH1 : I PHONE OFF
+        console.log("TH2: IPHONE TAT")
+        Iphone.turnOff();
+        Nokia.charge();
+        console.log(Iphone.status)
+        console.log(pinIphone.getStatus())
+        massage= "Ola! Ola!";
+        Nokia.writeMessage(massage);
+        console.log(pinNokia.getStatus())
+        console.log(Nokia.saveBox)
+        Nokia.sentMessage(massage,Iphone);
+        console.log(pinNokia.getStatus())
+        console.log(Nokia.sentBox)
+        Iphone.receiveMessage(Nokia);
+        console.log(Iphone.inBox)
+        Nokia.readMessageSentBox();
+        console.log(pinNokia.getStatus())
+        Iphone.readMessageInbox();
+        console.log(pinIphone.getStatus())
+
+    </script>
+</body>
+
+</html>

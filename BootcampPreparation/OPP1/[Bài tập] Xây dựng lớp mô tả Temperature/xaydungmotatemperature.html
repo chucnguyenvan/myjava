@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Temperature = function(cencius){
+            this.cencius= cencius;
+             this.exchangF = function (){
+                return (9/5 *this.cencius+32);
+            }
+             this.exchangKenvin= function (){
+                return (this.cencius+273);
+            }
+        }
+        let tem = new Temperature(25);
+        alert('do F '+ tem.exchangF()+ " do K : "+ tem.exchangKenvin());
+    </script>
+</body>
+</html>

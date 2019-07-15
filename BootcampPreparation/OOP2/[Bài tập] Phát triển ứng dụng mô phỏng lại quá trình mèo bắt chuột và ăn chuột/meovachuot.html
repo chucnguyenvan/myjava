@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Rat = function (name,weight,speed,status){
+            this.name=name;
+            this.weight=weight;
+            this.speed=speed;
+            this.status=status;
+            this.callRat= function(){
+                return ("Chit! chit!");
+            }
+        }
+        let Cat = function(name,weight,maxSpeed){
+            this.name=name;
+            this.weight=weight;
+            this.maxSpeed=maxSpeed;
+            this.speakCat=function (){
+                return ("meo meo");
+            }
+            this.catchRat = function (rat){
+                if(this.maxSpeed>rat.speed) return true;
+                else return false;
+            }
+            this.eatRat=function(rat){
+                if((this.catchRat)&&(rat.status)) {
+                    this.weight+=rat.weight;
+                }
+            }
+        }
+        let Tom= new Cat("TomBoy",15,20);
+        let jerry=new Rat("Jerry",2,15,true);
+
+        Tom.speakCat();
+        document.write(Tom.speakCat()+"<br>")
+        Tom.catchRat(jerry);
+        jerry.callRat();
+        document.write(jerry.callRat()+"<br>")
+        Tom.eatRat(jerry);
+        console.log(Tom.weight);
+
+
+    </script>
+</body>
+</html>

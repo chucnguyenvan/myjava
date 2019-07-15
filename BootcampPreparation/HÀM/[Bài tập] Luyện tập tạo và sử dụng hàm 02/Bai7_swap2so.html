@@ -13,12 +13,13 @@
         let a = parseInt(prompt("Nhap vao 1 so : "));
         let b = parseInt(prompt("Nhap vao 1 so : "));
         alert(" 2 so trc khi swap: " + a + " , " + b);
-        swap2digital(a, b);
-        alert(" 2 so sau khi swap: " + a + " , " + b);
+        let result=swap2digital(a, b);
+        alert(" 2 so sau khi swap: " + result[0] + " , " + result[1]);
         function swap2digital(nb1, nb2) {
-            nb1 = nb1 + nb2;
-            nb2 = nb1 - nb2;
-            nb1 = nb1 - nb2;
+            // let t=nb1;
+            // nb1=nb2;
+            // nb2=t;
+        return  [nb2,nb1];
         }
     </script>
 </body>

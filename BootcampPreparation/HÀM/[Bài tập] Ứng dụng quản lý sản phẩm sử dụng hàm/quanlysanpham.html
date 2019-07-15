@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for=""> ADD NEW PRODUCT: </label>
+        <br>
+        <br>
+        <input type="text" id="nameProcduct" placeholder="New Procduct">
+        <button type="button" onclick="addProcduct();">ADD</button>
+        <br>
+    </div>
+    <script>
+        let listProct = ['Sony Expeia', 'SamSung J7', 'Nokia 6', 'Xaomi Note 4', 'Iphone 6s', 'Xaomi Mi 5s Plus', 'Iphone 8S', 'Oppo A71'];
+        showProcduct(listProct);
+        function addProcduct() {
+            let newProcduct = document.getElementById('nameProcduct').value;
+            listProct.push(newProcduct);
+            document.getElementById('nameProcduct').value = "";
+            alert("Ban vua them " + newProcduct);
+        }
+        function showProcduct() {
+            var data = '';
+            if (listProct.length > 0) {
+                for (i = 0; i < listProct.length; i++) {
+                    data += '<tr>';
+                    data += '<td>' + listProct[i] + '</td>';
+                    data += '<td><button onclick="app.edit(' + i + ')">Edit</button></td>';
+                    data += '<td><button onclick="app.delete(' + i + ')">Delete</button></td>';
+                    data += '</tr>';
+                }
+            }
+        }
+            function editProcduct() {
+
+            }
+            function deleteProcduct() {
+
+            }
+
+    </script>
+</body>
+
+</html>

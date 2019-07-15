@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Remote = function(tivi) {
+          this.code;
+          this.tivi = tivi;
+  
+          this.press = function(code) {
+            this.code = code;
+            switch (this.code) {
+              case 'power':
+                this.powerPress();
+                break;
+              case '+':
+              case '-':
+                this.volumePress();
+                break;
+              default:
+                this.channelPress();
+            }
+          };
+  
+          this.powerPress = function() {
+            this.tivi.power();
+          };
+  
+          this.volumePress = function() {
+            if (this.code == '+') {
+              this.tivi.controlVolume(true);
+            } else {
+              this.tivi.controlVolume(false);
+            }
+          };
+  
+          this.isChannel = function(label) {
+            return 0 <= label && label <= 9;
+          };
+  
+          this.channelPress = function() {
+            if (this.isChannel(this.code)) {
+              this.tivi.controlChanel(this.code);
+            } else {
+              alert('Wrong channel!! Please Press Again!');
+            }
+          };
+        };
+  
+        let TIVI = function() {
+          this.chanel = 1;
+          this.volume = 10;
+          this.status = false;
+  
+          this.power = function() {
+            this.status = !this.status;
+          };
+  
+          this.controlChanel = function(kenh) {
+            if (this.status) {
+              this.chanel = kenh;
+            } else {
+              alert('Power is off!!');
+            }
+          };
+          this.controlVolume = function(volume) {
+            if (this.status) {
+              if (volume) {
+                this.volume++;
+              } else {
+                this.volume--;
+              }
+            } else {
+              alert('Power is off!!');
+            }
+          };
+        };
+  
+        let SONY = new TIVI();
+        let remote = new Remote(SONY);
+        remote.press('power');
+        console.log(SONY.status);
+        console.log(SONY.chanel);
+        remote.press(3);
+        console.log(SONY.chanel);
+        remote.press('+');
+        console.log(SONY.volume);
+        remote.press('+');
+        console.log(SONY.volume);
+  
+        remote.press('dsa');
+  
+        remote.press('power');
+        console.log(SONY.status);
+  
+        remote.press(1);
+      </script>
+</body>
+</html>

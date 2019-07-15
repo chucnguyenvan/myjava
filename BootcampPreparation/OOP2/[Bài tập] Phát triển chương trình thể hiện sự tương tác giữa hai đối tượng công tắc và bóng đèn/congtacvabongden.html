@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Lamp = function () {
+            this.status;
+            this.turnOn = function () {
+                this.status == true;
+            }
+            this.turnOff = function () {
+                this.status == false;
+            }
+            this.showStatus=function (){
+                if(this.status) return ("Light");
+                else return ("NotLight");
+            }
+        }
+        let SwitchBotton = function(){
+            this.status;
+            this.connectToLamp=function(lamp){
+                return lamp.status=this.status;
+            }
+            this.switchOff = function(){
+                this.status=false;
+            }
+            this.switchOn = function(){
+                this.status=true;
+            }
+        }
+        let phillip= new Lamp();
+        console.log(phillip)
+        let sw = new SwitchBotton();
+        console.log(sw)
+        for(i=0;i<10;i++){
+            document.write("OFF SW: <br>");
+            sw.switchOff();
+            sw.connectToLamp(phillip);
+            console.log(sw.status);
+            document.write("Status Lamp : " + phillip.showStatus()+" Trang thai SW: " + sw.status+"<br>");
+            document.write("On SW: <br>");
+            sw.switchOn();
+            sw.connectToLamp(phillip);
+            console.log(sw.status);
+            document.write("Status Lamp : " + phillip.showStatus()+" Trang thai SW: " + sw.status+"<br>");
+
+        }
+        
+    </script>
+</body>
+
+</html>
