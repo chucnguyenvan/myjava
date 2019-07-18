@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let code1= "Achak09_";
+        let code2="c_chuc91"
+        let code3="_CuChuc_";
+        let code4="01chuc01";
+        document.write("code1: "+checkCode(code1)+" code2: "+checkCode(code2)+" code3 :"+ checkCode(code3)+" code4: "+ checkCode(code4));
+        function checkCode(code){
+            let pattern= /^[A-Z][A-Za-z0-9_]{7}$/;
+            if(pattern.test(code)){
+                return true
+            }
+            return false;
+        }    
+    </script>
+</body>
+</html>

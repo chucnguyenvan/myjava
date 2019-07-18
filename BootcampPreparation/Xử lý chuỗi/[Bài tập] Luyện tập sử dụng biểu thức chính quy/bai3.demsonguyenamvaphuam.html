@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = prompt("Nhap vao 1 chuoi: ");
+        let array = a.split("");
+        let songuyenAm= countNguenAm(array);
+        let sophuAm=countPhuAm(array);
+        document.write("So nguyen am trong chuoi: "+songuyenAm+"<br>");
+        document.write("So phu am trong chuoi: "+sophuAm+"<br>");
+        function isNguyenAm(char) {
+            let pattern = /^[ueoai]$/i;
+            if (pattern.test(char)) {
+                return true;
+            } return false;
+        }
+        // function isPhuAm(char){
+        //     let pattern = /^[B-DF-HJ-NP-ST-Z]$/i;
+        //     if(pattern.test(char)){
+        //         return true;
+        //     }return false;
+        // }
+        function isPhuAm(char) {
+            let pattern = /^[A-Z]$/i;
+            if (pattern.test(char) && !isNguyenAm(char)) {
+                return true;
+            } return false;
+        }
+        function countPhuAm(arr) {
+            let count=0;
+            for (let i = 0; i < array.length; i++) {
+                if(isPhuAm(arr[i])){
+                    count++;
+                }
+            }return count;
+        }
+        function countNguenAm(arr) {
+            let count=0;
+            for (let i = 0; i < array.length; i++) {
+                if(isNguyenAm(arr[i])){
+                    count++;
+                }
+            }return count;
+        }
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = prompt(" NHap vao 1 chuoi: ");
+        let result = countWord(a);
+        alert(" So tu trong chuoi la: " + result);
+        function countWord(str) {
+            let str1 = str.trim();
+            console.log("str1:"+str1);
+            let array = str1.split(" ");
+            console.log(array);
+            let last = array.length - 1;
+            if ( array.length ==0) return 0;
+            else {
+                for (let i = 0; i < array.length; i++)
+                    if (array[i] == "") {
+                        for (let j = i; j < last; j++) {
+                            array[j] = array[j + 1];
+                        }
+                        array.pop();
+                        last--;
+                        i--;
+                    }
+                return array.length;
+            }
+        }
+    </script>
+</body>
+
+</html>

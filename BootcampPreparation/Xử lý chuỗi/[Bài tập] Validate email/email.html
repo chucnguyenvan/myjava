@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isEmail(email) {
+            let pattern = /^[A-Za-z0-9]+@([A-Za-z0-9]+\.[A-Za-z]+)$/;
+            if (pattern.test(email)) {
+                return true
+            } else return false;
+        }
+        let e1 = 'a@gmail.com';
+        let e2 = 'ab@yahoo.com';
+        let e3 = 'abc@hotmail.com';
+        document.write(isEmail(e1)+"<br>");
+        document.write(isEmail(e2)+"<br>");
+        document.write(isEmail(e3)+"<br>");
+        let m1 = '@gmail.com';
+        let m2 = 'ab@gmail.'
+        let m3 = '@#abc@gmail.com'
+        document.write(isEmail(m1)+"<br>");
+        document.write(isEmail(m2)+"<br>");
+        document.write(isEmail(m3)+"<br>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        for (var i = 0; i < 100; ++i) {
+            arr[i] = Math.floor(Math.random() * 100);
+        }
+        var maxValue = findMax(arr);
+        var minValue = findMin(arr);
+        disAppearArray(arr);
+        document.write("<br/>");
+        document.write("The maximum value is: " + maxValue);
+        document.write("<br/>");
+        document.write("The minimum value is: " + minValue);
+
+        function disAppearArray(array){
+            for(let i=0;i<array.length;i++){
+                document.writeln(array[i]);
+            }
+        }
+
+        function findMax(array) {
+            let max = array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > max) {
+                    max = array[i];
+                }
+            } return max;
+        }
+
+        function findMin(array) {
+            let min = array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] < min) {
+                    min = array[i];
+                }
+            } return min;
+        }
+    </script>
+</body>
+
+</html>

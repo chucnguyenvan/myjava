@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr =['0934989666', '0914868448','09248a8448','0864868448',
+        '0344868448','0364868448','0984868448','0934868448','0394867428',
+        '0884868448','0874868448','0956868448']
+        let text="";
+        for(let i=0;i<arr.length;i++){
+            if(isDigitalViettel(arr[i])){
+                text+=arr[i]+" ";
+            }
+        }
+        document.write("Cac so cua nha mang Viettel la: <br>")
+        document.write(text)
+        function isDigitalViettel(number) {
+            let pattern = /^0(9[6-8]|3[2-9]|86)[0-9]{7}$/;
+            if (pattern.test(number)) {
+                return true;
+            } return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -8,11 +8,23 @@
 </head>
 <body>
     <script>
-        let n=prompt("Nhap vao so pt mang: ");
-        let A=[];
-        for(let i=0;i<n;i++){
-            A[i]=prompt("Nhap vao so pt mang: "+i);
+        let n=prompt("Nhap vao : ");
+        let arr = n.split("");
+        console.log(arr)
+        let count=0;
+        for(i=0;i<arr.length;i++){
+            if(isNumber(arr[i])){
+                count++;
+            }
         }
+        function isNumber(char){
+            let A=[0,1,2,3,4,5,6,7,8,9];
+            for(let i=0;i<A.length;i++){
+                if(char==A[i]) return true;
+            }           
+        }
+        document.write(arr)
+        alert(count)
     </script>
 </body>
 </html>

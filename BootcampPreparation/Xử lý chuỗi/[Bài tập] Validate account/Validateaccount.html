@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function indicateAccount(account) {
+            let pattern = /^[a-z0-9_]{6,}$/;
+            if (pattern.test(account)) {
+                return true
+            } else return false;
+        }
+        let acc = '123abc_';
+        let acc1 = '_abc123';
+        let acc2 = '______';
+        let acc3 = '123456';
+        let acc4 = 'abcdefg';
+        document.write(indicateAccount(acc) + "<br>");
+        document.write(indicateAccount(acc1) + "<br>");
+        document.write(indicateAccount(acc2) + "<br>");
+        document.write(indicateAccount(acc3) + "<br>");
+        document.write(indicateAccount(acc4) + "<br>");
+        acc ='.@';
+        acc1 ='12345';
+        acc2 ='1234_';
+        acc3 ='abcde' 
+        document.write(indicateAccount(acc) + "<br>");
+        document.write(indicateAccount(acc1) + "<br>");
+        document.write(indicateAccount(acc2) + "<br>");
+        document.write(indicateAccount(acc3) + "<br>");
+    </script>
+</body>
+
+</html>

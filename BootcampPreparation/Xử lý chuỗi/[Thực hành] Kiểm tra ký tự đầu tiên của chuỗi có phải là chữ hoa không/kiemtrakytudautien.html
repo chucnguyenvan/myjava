@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isFirstUppercase(str) {
+            let pattern = /^[A-Z]/;
+            if (pattern.test(str)) return alert(str +" Ky tu dau tien la ky tu viet hoa");
+            else return alert(str+" Ky tu dau tien khong phai ky tu viet hoa");
+        }
+        let n = prompt("Nhap vao chuoi ban muon kiem tra? ");
+        isFirstUppercase(n);
+        let string1= "Nguyen van Nam"
+        isFirstUppercase(string1)
+        let string2= "NGUYEN VAN NAM"
+        isFirstUppercase(string2)
+        let string3= "nguyen van Nam";
+        isFirstUppercase(string3)
+    </script>
+</body>
+
+</html>

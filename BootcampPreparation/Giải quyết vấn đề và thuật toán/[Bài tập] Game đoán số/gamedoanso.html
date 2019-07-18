@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let keyNumber = Math.round(Math.random() * 100);
+        let yourChoise = parseInt(prompt("BAN DOAN SO NAO:"))
+        let count=1;
+        while (yourChoise != keyNumber) {
+            if (yourChoise < keyNumber) {
+                alert("LON HON");
+            }
+            else {
+                alert("NHO HON");
+            }
+            yourChoise = parseInt(prompt("MOI BAN DOAN LAI"));
+            count++
+        }
+        alert("CHUC MUNG! BAN DA DOAN DUNG");
+        alert("so lan du doan cua ban la: "+count);
+    </script>
+</body>
+
+</html>
