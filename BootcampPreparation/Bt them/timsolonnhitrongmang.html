@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let A =[];
+        document.write(A+"<br>")
+        sortMax(A)
+        document.write(A+"<br>")
+        document.write(maxSecond(A) )
+        function sortMax(array){
+            if(array.length==0)return -1;
+            for(let i=0;i<array.length;i++){
+                for(let j=0;j<array.length;j++){
+                    if(array[j]<array[i]){
+                        let t= array[i];
+                        array[i]=array[j];
+                        array[j]=t;
+                    }
+                }
+            }
+            return array;
+        }
+        function maxSecond(array){
+            if(array.length==0||array.length==1)return ("khong co gia tri lon nhi cua mang")
+            let max =array[0];
+            for(let i=0;i<array.length;i++){
+                if(max!=array[i]) return ("Gia tri lon nhi cua mang: " +array[i]);
+            }return ("khong co gia tri lon nhi cua mang")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string ="Tôi yêu ngôn ngữ lập trình Javascript";
+        let count =0;
+        for(i=0;i<string.length;i++){
+            if(string.charAt(i)=="a"){
+                count++;
+            }
+        }
+        document.write("vi tri xuat hien cua ky tu a: "+count+"<br>");
+        let array= string.split(" ");
+        document.write("Chuoi: "+string+"<br>");
+        document.write(array+"<br>");
+        document.write("So luong tu co trong chuoi tren la: "+array.length+"<br>");
+        document.write("Thay the chu Javascript bang Typescript: <br>");
+        let str=string.replace("Javascript",'Typescript');
+        document.write(string+"<br>")
+        document.write(str)
+    </script>
+</body>
+</html>

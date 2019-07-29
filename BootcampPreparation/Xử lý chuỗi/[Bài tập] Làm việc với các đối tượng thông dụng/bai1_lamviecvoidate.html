@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let birthDay = new Date(2016, 0, 1);
+        document.write(birthDay);
+        let today = new Date();
+        console.log(today);
+
+        function isNamNhuan(year) {
+            if (year % 4 != 0) {
+                return false;
+            } else if (year % 100 != 0)
+                return true;
+            else if (year % 400 == 0) return true;
+            else return false;
+        }
+        function getDayBorn(year,month,date) {
+            let day = 0;
+            day = year*365 + date + Math.floor(year/4);
+            if (isNamNhuan(year)) {
+                let dayfer = 29;
+            } else dayfer = 28;
+            switch (month) {
+                case 0:
+                    day = day;
+                    break;
+                case 1:
+                    day = day + 31;
+                    break;
+                case 2:
+                    day = day + 31 + dayfer;
+                    break;
+                case 3:
+                    day = day + 31 * 2 + dayfer;
+                    break;
+                case 4:
+                    day = day + 31 * 2 + dayfer + 30;
+                    break;
+                case 5:
+                    day = day + 31 * 3 + dayfer + 30;
+                    break;
+                case 6:
+                    day = day + 31 * 3 + dayfer + 30 * 2;
+                    break;
+                case 7:
+                    day = day + 31 * 4 + dayfer + 30 * 2;
+                    break;
+                case 8:
+                    day = day + 31 * 5 + dayfer + 30 * 2;
+                    break;
+                case 9:
+                    day = day + 31 * 5 + dayfer + 30 * 3;
+                    break;
+                case 10:
+                    day = day + 31 * 6 + dayfer + 30 * 2;
+                    break;
+                case 11:
+                    day = day + 31 * 6 + dayfer + 30 * 3;
+                    break;
+                default: day = day;
+                    break;
+            }
+            return day;
+        }
+
+        let yearBorn = today.getFullYear()-birthDay.getFullYear();
+        console.log(yearBorn);
+        let monthBorn= today.getMonth()+today.getFullYear()*12-(birthDay.getMonth()+birthDay.getFullYear()*12);
+        console.log(monthBorn);
+        let dayBorn =getDayBorn(today.getFullYear(),today.getMonth(),today.getDate())-getDayBorn(birthDay.getFullYear(),birthDay.getMonth(),birthDay.getDate());
+        console.log(dayBorn);
+        let hourBorn =dayBorn*24+today.getHours();
+        console.log(hourBorn);
+        let minuteBorn= hourBorn*60+today.getMinutes();
+        console.log(minuteBorn);
+        let second= minuteBorn*60+today.getSeconds();
+        console.log(second);
+        // let milisecond= today.getMilliseconds()-birthDay.getMilliseconds();
+    </script>
+</body>
+
+</html>

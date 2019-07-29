@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isFirstJava(str,strcon){
+            let str1=str.substr(0,strcon.length);
+            console.log(str1)
+            if(str1==strcon) return true;
+            else return false;
+        }
+        let string = prompt("Nhap vao chuoi: ");
+        let stringcon = prompt("Nhap vao chuoi: ");
+        if(isFirstJava(string,stringcon)){
+            document.write("chuoi ban nhap vao bat dau bang "+stringcon);
+        }
+        else document.write("chuoi ban nhap vao khong bat dau bang "+stringcon);
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="300px" width="400px" style="border: 1px solid#d3d3d3;"></canvas>
+    <script>
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        let Circle = function (x, y, r) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.drawCricle = function (ctx, color) {
+                ctx.beginPath();
+                ctx.fillStyle = color;
+                ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        }
+        let Rectangle = function (x, y, width, lenght) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.lenght = lenght;
+
+            this.drawRectanle = function (ctx, color) {
+                ctx.beginPath();
+                ctx.fillStyle = color;
+                ctx.fillRect(this.x, this.y, this.width, this.lenght);
+                ctx.fill();
+            }
+            this.clear = function () {
+                ctx.clearRect(0, 0, ctx.width, ctx.height)
+            }
+            this.moveRight = function () {
+                this.x += 2;
+            }
+            this.moveLeft = function () {
+                this.x -= 2;
+            }
+        }
+        function init() {
+            let HCN = new Rectangle(0, 290, 50, 10);
+            HCN.drawRectanle(ctx, "blue");
+            let tron = new Circle(20, 20, 5)
+            tron.drawCricle(ctx, "violet");
+        }
+        function doKeypress() {
+            if (_keypressed[Keys.LEFT_ARROW])
+                HCN.moveLeft();
+            if (_keypressed[Keys.RIGHT_ARROW])
+                HCN.moveRight();
+            HCN.move();
+            draw();
+        }
+        window.onload = function () {
+            init();
+            // _canvas.onkeydown = canvas_keyDown;
+            // _canvas.onkeyup = canvas_keyUp;
+        }
+
+    </script>
+</body>
+
+</html>

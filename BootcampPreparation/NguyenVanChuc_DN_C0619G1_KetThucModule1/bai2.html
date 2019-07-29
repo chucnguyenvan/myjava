@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrayFirst = [12, 6, 3, 7, 21, 5, 7];
+        document.write("Mang ban dau: " + arrayFirst + "<br>");
+        let a=parseInt(prompt("Nhap vao index ban mun xoa!"))
+        document.write("Mang xoa di pt index = "+a+"<br>" + tryRemoveFromArray(arrayFirst, a) + "<br>");
+
+        function tryRemoveFromArray(array, index) {
+            if ((array.length <= index) || (index < 0)) {
+                return array;
+            }
+            for (let i = index; i < array.length -1; i++) {
+                array[i] = array[i + 1];
+            }
+            array.length--;
+            return array;
+        }
+    </script>
+</body>
+
+</html>

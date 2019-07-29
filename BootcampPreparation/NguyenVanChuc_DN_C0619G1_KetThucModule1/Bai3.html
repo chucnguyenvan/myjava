@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a= parseInt(prompt("Nhap vao mot so nguyen: "));
+        if(isPrime(a)){
+            document.write(a+ " la so nguyen to: <br>");
+        }else {
+            document.write(a+ " khong phai la so nguyen to: <br>");
+        }
+        function isPrime(intNumber) {
+            if (intNumber < 2) return false;
+            for (let i = 2; i < intNumber; i++) {
+                if (intNumber % i == 0) return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

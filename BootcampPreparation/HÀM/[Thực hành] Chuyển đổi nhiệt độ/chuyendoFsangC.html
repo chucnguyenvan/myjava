@@ -12,19 +12,18 @@
     <h3>Temperature Converter:</h3>
     <label for=""> Type a value in the Fahrenheit file to converter the value to Celcious: </label>
     <br><br>
-    <label for="">Fahrenheit</label> 
-    <input type="number" id="Temperature" placeholder="0"
-    oninput="temperatureConverter(this.value)" 
-    onchange="temperatureConvert(this.value)">
+    <label for="">Fahrenheit</label>
+    <input type="number" id="Temperature" placeholder="0" 
+        onkeyup="temperatureConvert(this.value)">
     <br>
-    <label for="">Celcious :</label> <span id ="cenciousTemperature"></span>
+    <label for="">Celcious :</label> <span id="cenciousTemperature"></span>
     <br>
     <br>
 
     <script>
         function temperatureConvert(doF) {
             let C = (doF - 32) / 9 * 5;
-            document.getElementById("cenciousTemperature").innerHTML=C;
+            document.getElementById("cenciousTemperature").innerHTML = C;
         }
     </script>
 </body>
