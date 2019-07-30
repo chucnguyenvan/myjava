@@ -14,7 +14,7 @@ public class timucln {
                 System.out.println("No greatest common factor");
             }else System.out.println(b+" is greatest common factor");
         }else if(b==0){
-            System.out.println(b +" is greatest common factor");
+            System.out.println(a +" is greatest common factor");
         }else {
             int ucln=0;
             for(int i=1;i<=a;i++){

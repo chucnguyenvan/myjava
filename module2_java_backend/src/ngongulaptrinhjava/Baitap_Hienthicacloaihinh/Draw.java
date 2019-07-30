@@ -86,8 +86,10 @@ public class Draw {
                     draw.isoscelesTriangle();
                     break;
                 case 0:
-//                    System.exit();
+//                    System.exit(0);
                     System.exit(0);
+                    break;
+                default: System.out.println("No Choice.Reselect");
                     break;
             }
             System.out.println("MENU");
