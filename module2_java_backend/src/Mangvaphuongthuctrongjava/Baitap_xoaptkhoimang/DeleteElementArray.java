@@ -32,6 +32,7 @@ public class DeleteElementArray {
                     }
                     i--;
                     dem++;
+                    array[array.length-dem]=0;
                 }
             }
         } else {
